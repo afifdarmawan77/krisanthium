@@ -110,3 +110,4 @@ D:\KrisanthiumCurrency\KrisanthiumCurrency\obj\Debug\net8.0\refint\KrisanthiumCu
 D:\KrisanthiumCurrency\KrisanthiumCurrency\obj\Debug\net8.0\KrisanthiumCurrency.pdb
 D:\KrisanthiumCurrency\KrisanthiumCurrency\obj\Debug\net8.0\KrisanthiumCurrency.genruntimeconfig.cache
 D:\KrisanthiumCurrency\KrisanthiumCurrency\obj\Debug\net8.0\ref\KrisanthiumCurrency.dll
+D:\KrisanthiumCurrency\KrisanthiumCurrency\obj\Debug\net8.0\KrisanthiumCurrency.sourcelink.json

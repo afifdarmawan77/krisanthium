@@ -3,9 +3,9 @@
 Sederhana — panduan singkat untuk instalasi, menjalankan, migrasi database, konfigurasi environment, API yang dipakai, dan testing.
 
 ### 1. Install (prerequisites)
+- Direkomendasikan memakai Visual Studio
 - .NET 8 SDK: https://dotnet.microsoft.com
-- MySQL atau MariaDB (port default 3306)
-- (opsional) GitHub `gh` CLI jika ingin membuat/push repo dari CLI
+- MySQL (port default 3306)
 
 ### 2. Cara menjalankan aplikasi
 Dari direktori project (mis. `D:\KrisanthiumCurrency\`):

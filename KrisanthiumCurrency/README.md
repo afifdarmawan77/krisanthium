@@ -1,52 +1,72 @@
-Here's the improved `README.md` file with the new content incorporated while maintaining the existing structure and information:
+## KrisanthiumCurrency
 
-# Project Title
+Sederhana — panduan singkat untuk instalasi, menjalankan, migrasi database, konfigurasi environment, API yang dipakai, dan testing.
 
-## Description
+### 1. Install (prerequisites)
+- .NET 8 SDK: https://dotnet.microsoft.com
+- MySQL atau MariaDB (port default 3306)
+- (opsional) GitHub `gh` CLI jika ingin membuat/push repo dari CLI
 
-[Provide a brief description of the project here.]
+### 2. Cara menjalankan aplikasi
+Dari direktori project (mis. `D:\KrisanthiumCurrency\`):
 
-## Features
-
-- [List the features of your project here.]
-
-## Installation
-
-[Provide instructions on how to install the project dependencies here.]
-
-## Usage
-
-[Explain how to use the project here.]
-
-## Development
-
-To build and run the Razor Pages project locally, follow these steps:
-
-# From project root
+Buka terminal jalankan perintah berikut:
+dotnet restore
 dotnet build
+
+## 3. Database migration
+Project menggunakan Entity Framework Core dengan provider MySQL (Pomelo).
+
+- Pastikan MySQL berjalan dan buat database (contoh menggunakan MySQL CLI):
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS exchange_rate CHARACTER SET utf8mb4;"
+
+- Install/aktifkan `dotnet-ef` jika belum:
+dotnet tool install --global dotnet-ef
+
+- Terapkan migration yang sudah ada:
+dotnet ef database update --project KrisanthiumCurrency --startup-project KrisanthiumCurrency
+
+- Melihat daftar migration:
+dotnet ef migrations list --project KrisanthiumCurrency
+
+
+Catatan: `KrisanthiumCurrency` sudah menyertakan paket `Microsoft.EntityFrameworkCore.Design` dan `Microsoft.EntityFrameworkCore.Tools`.
+
+## 4. Environment configuration
+Konfigurasi utama ada di `appsettings.json` (contoh kunci penting):
+- Connection string MySQL: `ConnectionStrings:DefaultConnection`
+- Base URL untuk client internal: `AppBaseUrl`
+
+Contoh `appsettings.json` (project):
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;port=3306;database=exchange_rate;uid=root;pwd=;CharSet=utf8mb4;"
+  },
+  "AppBaseUrl": "http://localhost:61095"
+}
+```
+
+## 5. API yang digunakan
+- External exchange-rate API: `https://open.er-api.com/v6/latest/{currency}`  
+  Implementasi: `ExchangeRateApiProvider` (Service) — sumber bernama `open.er-api.com`.
+- Mock ERP internal endpoint (disediakan oleh project):
+  - `POST /api/mock-erp/exchange-rate` — menerima payload sinkronisasi kurs.
+  - Client internal: `MockErpClient` mengirim POST ke `AppBaseUrl` + `/api/mock-erp/exchange-rate`.
+
+
+Gunakan Swagger di `/swagger` untuk melihat API yang tersedia dan contoh request/response.
+
+## 6. Cara menjalankan
+Pada folder project, jalankan:
 dotnet run --project KrisanthiumCurrency
 
-To create a GitHub repository and push your initial commit, use the following commands:
+atau jalankan lewat tombol Play/F5 di IDE (mis. Visual Studio, Rider, VS Code).
 
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-gh repo create afifdarmawan77/KrisanthiumCurrency --public --source=. --remote=origin --push --confirm
+Setelah berjalan, akses antarmuka Razor Pages atau Swagger:
+- Web UI: `http://localhost:61095`
+- Swagger/OpenAPI: `http://localhost:61095/swagger`
 
-## Contributing
-
-[Provide guidelines for contributing to the project here.]
-
-## License
-
-[Specify the license under which the project is distributed here.]
-
-## Acknowledgments
-
-[Give credit to any resources, libraries, or individuals that helped you with the project.]
-
-### Changes Made:
-- Incorporated the new content under the "Development" section.
-- Ensured the overall structure and flow of the document remained coherent.
-- Added placeholders for sections that may need to be filled out for a complete README.
+Penting : Pastikan menggunakan port 61095, karena project sudah di Hard-Code menggunakan port tersebut.
+Jika port salah atau sudah digunakan, API tidak akan bisa diakses.
+Gunakan perintah `dotnet run --urls http://localhost:61095` untuk memastikan port yang benar.

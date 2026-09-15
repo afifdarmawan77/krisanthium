@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Migrations\\20260915120142_exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260915120142_exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\krisanthiumcurrency.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:krisanthiumcurrency.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\models\\exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:models\\exchangerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\contributing.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:contributing.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|d:\\krisanthiumcurrency\\krisanthiumcurrency\\.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}|",
-      "RelativeMoniker": "D:0:0:{F2AA41C4-5F45-44F4-B72E-81C96F4FD51F}|KrisanthiumCurrency.csproj|solutionrelative:.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,120 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20260915120142_exchangerate.cs",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Migrations\\20260915120142_exchangerate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20260915120142_exchangerate.cs",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Migrations\\20260915120142_exchangerate.cs",
-              "RelativeToolTip": "Migrations\\20260915120142_exchangerate.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwBMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T12:01:42.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T12:00:27.022Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-15T11:56:12.233Z",
+              "WhenOpened": "2026-09-15T12:29:33.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T11:55:16.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ExchangeRate.cs",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Models\\ExchangeRate.cs",
-              "RelativeDocumentMoniker": "Models\\ExchangeRate.cs",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Models\\ExchangeRate.cs",
-              "RelativeToolTip": "Models\\ExchangeRate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T11:54:12.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "README.md",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-09-15T10:42:47.5Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CONTRIBUTING.md",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\CONTRIBUTING.md",
-              "RelativeDocumentMoniker": "CONTRIBUTING.md",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\CONTRIBUTING.md",
-              "RelativeToolTip": "CONTRIBUTING.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-09-15T10:42:44.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": ".editorconfig",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\.editorconfig",
-              "RelativeDocumentMoniker": ".editorconfig",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\.editorconfig",
-              "RelativeToolTip": ".editorconfig",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-09-15T10:42:43.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "KrisanthiumCurrency.csproj",
-              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\KrisanthiumCurrency.csproj",
-              "RelativeDocumentMoniker": "KrisanthiumCurrency.csproj",
-              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\KrisanthiumCurrency.csproj",
-              "RelativeToolTip": "KrisanthiumCurrency.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-09-15T09:33:50.606Z",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\KrisanthiumCurrency\\KrisanthiumCurrency\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-15T12:28:46.815Z",
               "EditorCaption": ""
             }
           ]

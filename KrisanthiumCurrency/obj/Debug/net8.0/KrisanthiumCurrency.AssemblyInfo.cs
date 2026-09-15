@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KrisanthiumCurrency")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f1ee2ea3c7715d000f80ad563388b6494ffde94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+080c56a2e1ac3029260049ebc869aebfce62619e")]
 [assembly: System.Reflection.AssemblyProductAttribute("KrisanthiumCurrency")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KrisanthiumCurrency")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

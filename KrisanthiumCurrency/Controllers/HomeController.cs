@@ -4,29 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KrisanthiumCurrency.Controllers
 {
-    public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
+    public class HomeController : Controller {
+        /// <summary>Halaman "Exchange Rate" - kurs terbaru + tombol Get Latest Rate + Sync</summary>
+        public IActionResult Index() => View();
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        /// <summary>Halaman "Exchange Rate History" - filter currency & date</summary>
+        public IActionResult History() => View();
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => View();
     }
 }

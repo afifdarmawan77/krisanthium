@@ -1,8 +1,137 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Exchange Rate";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Exchange Rate</h2>
+    <button id="btnFetch" class="btn btn-warning fw-bold">Get Latest Rate</button>
 </div>
+
+<div id="alertBox" class="alert d-none" role="alert"></div>
+
+<table class="table table-bordered table-hover bg-white">
+    <thead class="table-light">
+        <tr>
+            <th>Currency</th>
+            <th>Rate</th>
+            <th>Date</th>
+            <th>ERP Status</th>
+            <th style="width: 140px;">Action</th>
+        </tr>
+    </thead>
+    <tbody id="rateTableBody">
+        <tr><td colspan="5" class="text-center text-muted">Memuat data...</td></tr>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        const alertBox = document.getElementById('alertBox');
+        const tableBody = document.getElementById('rateTableBody');
+        const btnFetch = document.getElementById('btnFetch');
+
+        function showAlert(message, type) {
+            alertBox.className = `alert alert-${type}`;
+            alertBox.textContent = message;
+        }
+
+        function hideAlert() {
+            alertBox.className = 'alert d-none';
+        }
+
+        function statusBadge(status) {
+            const map = {
+                'SYNCED': 'success',
+                'NOT_SYNCED': 'secondary',
+                'FAILED': 'danger'
+            };
+            return `<span class="badge bg-${map[status] || 'secondary'}">${status}</span>`;
+        }
+
+        function formatRate(rate) {
+            return Number(rate).toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+        }
+
+        async function loadLatestRates() {
+            tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">Memuat data...</td></tr>';
+            try {
+                const res = await fetch('/api/exchange-rates');
+                if (!res.ok) throw new Error('Gagal memuat data kurs.');
+                const data = await res.json();
+                renderTable(data);
+            } catch (err) {
+                tableBody.innerHTML = `<tr><td colspan="5" class="text-center text-danger">${err.message}</td></tr>`;
+            }
+        }
+
+        function renderTable(rows) {
+            if (!rows || rows.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">Belum ada data kurs. Klik "Get Latest Rate".</td></tr>';
+                return;
+            }
+
+            tableBody.innerHTML = rows.map(r => `
+                <tr data-id="${r.id}">
+                    <td>${r.currency}</td>
+                    <td>${formatRate(r.rate)}</td>
+                    <td>${r.rateDate}</td>
+                    <td class="status-cell">${statusBadge(r.erpStatus)}</td>
+                    <td>
+                        ${r.erpStatus === 'SYNCED'
+                            ? '<span class="text-muted">-</span>'
+                            : `<button class="btn btn-sm btn-primary btn-sync" data-id="${r.id}">Sync to ERP</button>`}
+                    </td>
+                </tr>
+            `).join('');
+
+            document.querySelectorAll('.btn-sync').forEach(btn => {
+                btn.addEventListener('click', () => syncToErp(btn.dataset.id, btn));
+            });
+        }
+
+        async function syncToErp(id, btn) {
+            hideAlert();
+            btn.disabled = true;
+            btn.textContent = 'Syncing...';
+
+            try {
+                const res = await fetch(`/api/exchange-rates/${id}/sync`, { method: 'POST' });
+                const data = await res.json();
+
+                if (res.ok && data.erpStatus === 'SYNCED') {
+                    showAlert('Rate synchronized successfully.', 'success');
+                } else {
+                    showAlert('Failed to synchronize rate to ERP. User dapat mencoba sync kembali.', 'danger');
+                }
+                loadLatestRates();
+            } catch (err) {
+                showAlert('Failed to synchronize rate to ERP. Please try again.', 'danger');
+                btn.disabled = false;
+                btn.textContent = 'Sync to ERP';
+            }
+        }
+
+        btnFetch.addEventListener('click', async () => {
+            hideAlert();
+            btnFetch.disabled = true;
+            btnFetch.textContent = 'Fetching...';
+
+            try {
+                const res = await fetch('/api/exchange-rates/fetch', { method: 'POST' });
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.message || 'Failed to retrieve exchange rate. Please try again.');
+                }
+                showAlert('Kurs berhasil diambil dan disimpan.', 'success');
+                await loadLatestRates();
+            } catch (err) {
+                showAlert(err.message, 'danger');
+            } finally {
+                btnFetch.disabled = false;
+                btnFetch.textContent = 'Get Latest Rate';
+            }
+        });
+
+        loadLatestRates();
+    </script>
+}

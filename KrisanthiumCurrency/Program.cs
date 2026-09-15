@@ -1,4 +1,5 @@
 using KrisanthiumCurrency.Data;
+using KrisanthiumCurrency.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,18 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// ----- External exchange rate API client -----
+builder.Services.AddHttpClient<IExchangeRateProvider, ExchangeRateApiProvider>();
+
+// ----- Mock ERP client (calls our own /api/mock-erp/exchange-rate endpoint) -----
+builder.Services.AddHttpClient<IMockErpClient, MockErpClient>((sp, client) => {
+    var baseUrl = builder.Configuration["AppBaseUrl"] ?? "http://localhost:61095";
+    client.BaseAddress = new Uri(baseUrl);
+});
+
+// ----- Application service -----
+builder.Services.AddScoped<ExchangeRateAppService>();
 
 var app = builder.Build();
 

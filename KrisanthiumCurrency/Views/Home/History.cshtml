@@ -1,0 +1,104 @@
+@{
+    ViewData["Title"] = "Exchange Rate History";
+}
+
+<h2 class="mb-3">Exchange Rate History</h2>
+
+<form class="row g-2 mb-3" id="filterForm">
+    <div class="col-auto">
+        <select id="filterCurrency" class="form-select">
+            <option value="">Semua Currency</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="SGD">SGD</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <input type="date" id="filterDate" class="form-control" />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <button type="button" id="btnReset" class="btn btn-outline-secondary">Reset</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-hover bg-white">
+    <thead class="table-light">
+        <tr>
+            <th>Date</th>
+            <th>Currency</th>
+            <th>Rate</th>
+            <th>Source</th>
+            <th>ERP Status</th>
+        </tr>
+    </thead>
+    <tbody id="historyTableBody">
+        <tr><td colspan="5" class="text-center text-muted">Memuat data...</td></tr>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        const tableBody = document.getElementById('historyTableBody');
+        const filterForm = document.getElementById('filterForm');
+        const filterCurrency = document.getElementById('filterCurrency');
+        const filterDate = document.getElementById('filterDate');
+        const btnReset = document.getElementById('btnReset');
+
+        function statusBadge(status) {
+            const map = { 'SYNCED': 'success', 'NOT_SYNCED': 'secondary', 'FAILED': 'danger' };
+            return `<span class="badge bg-${map[status] || 'secondary'}">${status}</span>`;
+        }
+
+        function formatRate(rate) {
+            return Number(rate).toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+        }
+
+        async function loadHistory() {
+            tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">Memuat data...</td></tr>';
+
+            const params = new URLSearchParams();
+            if (filterCurrency.value) params.append('currency', filterCurrency.value);
+            if (filterDate.value) params.append('date', filterDate.value);
+
+            try {
+                const res = await fetch(`/api/exchange-rates/history?${params.toString()}`);
+                if (!res.ok) throw new Error('Gagal memuat history kurs.');
+                const data = await res.json();
+                renderTable(data);
+            } catch (err) {
+                tableBody.innerHTML = `<tr><td colspan="5" class="text-center text-danger">${err.message}</td></tr>`;
+            }
+        }
+
+        function renderTable(rows) {
+            if (!rows || rows.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">Tidak ada data.</td></tr>';
+                return;
+            }
+
+            tableBody.innerHTML = rows.map(r => `
+                <tr>
+                    <td>${r.rateDate}</td>
+                    <td>${r.currency}</td>
+                    <td>${formatRate(r.rate)}</td>
+                    <td>${r.source ?? '-'}</td>
+                    <td>${statusBadge(r.erpStatus)}</td>
+                </tr>
+            `).join('');
+        }
+
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            loadHistory();
+        });
+
+        btnReset.addEventListener('click', () => {
+            filterCurrency.value = '';
+            filterDate.value = '';
+            loadHistory();
+        });
+
+        loadHistory();
+    </script>
+}
